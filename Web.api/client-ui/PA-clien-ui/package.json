@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@alireza-ab/vue3-persian-datepicker": "^1.0.4",
-    "@cafebazaar/emrooz": "^0.1.7",
     "@primevue/themes": "^4.2.5",
     "axios": "^1.7.9",
     "chart.js": "^4.4.7",

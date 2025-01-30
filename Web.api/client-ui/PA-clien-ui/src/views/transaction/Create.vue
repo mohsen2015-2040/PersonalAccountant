@@ -232,6 +232,21 @@ const submit = async () => {
   }
 }
 
+watch(dialog, async () => {
+  if (!dialog.value) {
+    model.transactionTypeId = 2
+    model.amount = 100
+    model.description = ''
+    model.creationDate = null
+    model.category = null
+    model.creditCard = null
+  } else {
+    initCategories()
+    initCards()
+    initModel(props.transactionId)
+  }
+})
+
 watch(
   () => model.category,
   (newVal) => {
@@ -274,18 +289,4 @@ watch(
   },
   { deep: true },
 )
-watch(dialog, async () => {
-  if (!dialog.value) {
-    model.transactionTypeId = 2
-    model.amount = 100
-    model.description = ''
-    model.creationDate = null
-    model.category = null
-    model.creditCard = null
-  } else {
-    initCategories()
-    initCards()
-    initModel(props.transactionId)
-  }
-})
 </script>
