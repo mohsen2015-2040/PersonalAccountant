@@ -116,7 +116,7 @@ public partial class DatabaseContext : DbContext
 
             entity.HasOne(d => d.CreditCard).WithMany(p => p.Transactions)
                 .HasForeignKey(d => d.CreditCardId)
-                .HasConstraintName("FK_Transaction_OriginCreditCardId")
+                .HasConstraintName("FK_Transaction_CreditCardId")
                 .OnDelete(DeleteBehavior.Cascade);
         });
 
